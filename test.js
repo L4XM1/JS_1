@@ -58,7 +58,8 @@ console.log(links);
 for (i = 0; i < 10; i++) {
   // console.log("joj" + i); // 7
 
-  if (i === 5 || i === 3) { // 7 jbg
+  if (i === 5 || i === 3) {
+    // 7 jbg
     continue;
   }
   console.log(i);
@@ -91,7 +92,6 @@ function logResult() {
 
 logResult();
 
-
 //numbers
 
 var a = "7";
@@ -115,27 +115,27 @@ console.log(a * b); //vraca NaN
 
 if (!isNaN(a)) {
   console.log("that's not a number");
-} else{
+} else {
   console.log("here's the result of a + b = " + (a + b));
 }
-
 
 //string
 
 var myString1 = 'I am a "fun ninja" string';
 var myString2 = 'I\'m a "fun" string'; //escape
-console.log(myString2); 
+console.log(myString2);
 console.log(myString1);
-console.log(myString1.length);//string is an object, they have methods and properties - length property
+console.log(myString1.length); //string is an object, they have methods and properties - length property
 console.log(myString1.toUpperCase()); //object method
 console.log(myString1.indexOf("string")); //object method //ako ne moze naci vraca -1
 
 if (myString1.indexOf("ninja") === -1) {
   console.log("the word ninja is not in the string");
-} else{
-  console.log("the word ninja starts at position " + myString1.indexOf("ninja"));
+} else {
+  console.log(
+    "the word ninja starts at position " + myString1.indexOf("ninja")
+  );
 }
-
 
 var string1 = "abc";
 var string2 = "ABC";
@@ -147,7 +147,7 @@ console.log(string1 < string2); //in js uppercase letter is less than lower
 
 var str = "hello, world";
 console.log(str);
-var str2 = str.slice(2,9); //0 based js, from _ to _
+var str2 = str.slice(2, 9); //0 based js, from _ to _
 console.log(str2);
 var str3 = str.slice(2); //0 based js, from _ to end
 console.log(str3);
@@ -158,5 +158,29 @@ console.log(tags);
 var tagsArray = tags.split(","); // split on comma
 console.log(tagsArray);
 
+//arrays - var that can store multiple values or multiple vars
 
+var myArray = []; //creates an empty array
+myArray[0] = 25;
+console.log(myArray[0]);
+myArray[1] = true;
+console.log(myArray[1]);
+myArray[2] = "hello";
+console.log(myArray[2]);
+console.log(myArray);
 
+myArray[1] = false; //updates 2nd index
+console.log(myArray);
+
+var myArray2 = [10, 20, "hi", false]; //creates an array and fills it
+console.log(myArray2);
+
+var myArray3 = new Array(); // new instance of the Array object
+
+var myArray4 = new Array(5);
+
+//they have methods and properties
+
+console.log(myArray2.length);
+console.log(myArray2.sort());
+console.log(myArray2.reverse());
