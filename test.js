@@ -34,9 +34,9 @@ if (myAge > 30) {
 var myAge = 26;
 
 if (myAge < 18 || myAge > 30 || myAge === 25) {
-  document.write(" u ain't coming" + "<br>");
+  document.write("you ain't coming" + "<br>");
 } else {
-  document.write(" u can come" + "<br>");
+  document.write("you can come" + "<br>");
 }
 
 var age = 4;
@@ -184,3 +184,101 @@ var myArray4 = new Array(5);
 console.log(myArray2.length);
 console.log(myArray2.sort());
 console.log(myArray2.reverse());
+
+//objects - container for data that encloses data that belongs together
+
+var myString = new String();
+myString = "hello";
+console.log(myString);
+console.log(myString.length); //property
+console.log(myString.toUpperCase()); //method
+
+var myArray = new Array();
+myArray[0] = 8;
+myArray[1] = "hello";
+
+var myCar1 = new Object();
+myCar1.maxSpeed = 140;
+myCar1.driver = "Marta";
+myCar1.drive = function () {
+  console.log("now driving");
+};
+
+console.log(myCar1.driver);
+myCar1.drive();
+
+// var myCar2 = {} //shorthand for creating a new (empty) object
+var myCar2 = {
+  maxSpeed: 50,
+  driver: "Ninja",
+  drive: function (speed, time) {
+    //distance travelled
+    console.log(speed * time);
+  },
+  test: function () {
+    console.log(this); //this object it is in right now
+  },
+};
+
+console.log(myCar2.maxSpeed);
+myCar2.drive(50, 3);
+
+// this keyword
+
+console.log(this); // window obj.
+myCar2.test();
+
+var myCar3 = {
+  maxSpeed: 180,
+  driver: "Alex",
+  drive: function (speed, time) {
+    //distance travelled
+    console.log(speed * time);
+  },
+  test: function () {
+    console.log(this); //this object it is in right now
+  },
+};
+
+console.log(myCar3);
+
+var myCar4 = {
+  maxSpeed: 180,
+  driver: "Alex",
+  drive: function (speed, time) {
+    //distance travelled
+    console.log(speed * time);
+  },
+  logDriver: function () {
+    console.log("driver name is " + this.driver); //this object's property (it is in right now)
+  },
+};
+
+myCar4.logDriver();
+
+//constructor function - quicker/eficient way to make a bunch of objs
+
+var myArray = new Array(); //constructor function
+var myArray = new String(); //constructor function
+// var myCar5 = new Car(); //constructor function for our "custom obj"
+
+var Car = function (maxSpeed, driver) {
+  //capital letter //(variables)
+  this.maxSpeed = maxSpeed;
+  this.driver = driver;
+  (this.drive = function (speed, time) {
+    console.log(speed * time);
+  }),
+    (this.logDriver = function () {
+      console.log("driver name is " + this.driver);
+    });
+};
+
+var myCar5 = new Car(50, "Gary");
+var myCar6 = new Car(40, "Henry");
+var myCar7 = new Car(200, "James Bond");
+var myCar8 = new Car(80, "Rambo");
+var myCar9 = new Car(150, "Spike");
+
+myCar5.drive(30, 5);
+myCar7.logDriver();
