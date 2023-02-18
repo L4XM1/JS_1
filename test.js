@@ -266,12 +266,12 @@ var Car = function (maxSpeed, driver) {
   //capital letter //(variables)
   this.maxSpeed = maxSpeed;
   this.driver = driver;
-  (this.drive = function (speed, time) {
+  this.drive = function (speed, time) {
     console.log(speed * time);
-  }),
-    (this.logDriver = function () {
-      console.log("driver name is " + this.driver);
-    });
+  };
+  this.logDriver = function () {
+    console.log("driver name is " + this.driver);
+  };
 };
 
 var myCar5 = new Car(50, "Gary");
@@ -282,3 +282,35 @@ var myCar9 = new Car(150, "Spike");
 
 myCar5.drive(30, 5);
 myCar7.logDriver();
+
+//date object
+
+var myDate = new Date();
+console.log(myDate);
+
+var myPastDate = new Date(1545, 11, 2, 10, 30, 15);
+var myFutureDate = new Date(1545, 0, 31, 10, 30, 15);
+console.log(myPastDate);
+console.log(myFutureDate);
+
+var birthday = new Date(1988, 0, 15, 11, 15, 25);
+var birthday2 = new Date(1988, 0, 15, 11, 15, 25);
+
+console.log(birthday.getMonth()); // (0-11)
+console.log(birthday.getFullYear());
+console.log(birthday.getDate()); // (1-31)
+console.log(birthday.getDay()); // ( 0 sunday - 6 saturday)(0-6 day of the week)
+console.log(birthday.getHours()); // (0-23)
+console.log(birthday.getTime()); // (in milliseconds, helps to compare)
+
+if (birthday == birthday2) {
+  console.log("birthdays are equal");
+} else {
+  console.log("birtdays are not equal");
+}
+
+if (birthday.getTime() == birthday2.getTime()) {
+  console.log("birthdays are equal");
+} else {
+  console.log("birtdays are not equal");
+}
