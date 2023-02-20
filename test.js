@@ -314,3 +314,67 @@ if (birthday.getTime() == birthday2.getTime()) {
 } else {
   console.log("birtdays are not equal");
 }
+
+// dom - every html tag is an object /model - hierarchical tree /nodes are anything you can change in html document (tags, attributes and also the text within is a seperate node)
+
+console.log(document.getElementsByClassName("content"));
+var myContentDivs = document.getElementsByClassName("content"); //returns all nodes []
+console.log(myContentDivs);
+
+var myH2 = myContentDivs[1].getElementsByTagName("h2"); //returns all nodes []
+console.log(myH2);
+
+myH2[0].innerHTML = "Hello - this has changed";
+
+console.log(document.getElementById("page-title")); //one element only
+
+var myBody = document.getElementsByTagName("body");
+console.log(myBody);
+
+console.log(myBody[0].innerHTML);
+
+// myBody[0].innerHTML = "<p>I am a paragraph tag</p>";
+
+var myTitle = document.getElementById("page-title");
+myTitle.textContent = "Hi, I'm learning";
+
+var link = document.getElementById("test");
+console.log(link.getAttribute("href")); //value of href
+console.log(link.getAttribute("class")); //I added the class name above (var links2) in the for loop
+
+link.setAttribute("class", "pie");
+link.setAttribute("alt", "hello");
+
+console.log(link.className);
+console.log((link.className = "Class name changed"));
+
+console.log(link.href); //full link
+
+myTitle.setAttribute("style", "position: relative;");
+// myTitle.setAttribute("style", "left: 10px;"); //it overrides the 1st one
+
+myTitle.style.left = "20px";
+myTitle.style.top = "10px";
+myTitle.style.color = "red";
+myTitle.style.backgroundColor = "blue";
+myTitle.style.width = "250px";
+
+var newLi = document.createElement("li");
+console.log(newLi);
+
+var newA = document.createElement("a");
+console.log(newA);
+
+var menu = document.getElementById("main-nav").getElementsByTagName("ul")[0];
+
+menu.appendChild(newLi); //at bottom
+newLi.appendChild(newA);
+newA.innerHTML = "Blog";
+
+menu.insertBefore(newLi, menu.getElementsByTagName("li")[0]);
+
+var parent = document.getElementById("main-nav").getElementsByTagName("ul")[0];
+var child = parent.getElementsByTagName("li")[0];
+console.log(child);
+var removed = parent.removeChild(child);
+parent.appendChild(removed);
