@@ -1,0 +1,23 @@
+#text-content {
+    max-height: 270px;
+    overflow: hidden;
+    width: 300px;
+    margin-bottom: 20px;
+  
+}
+
+#text-content.open {
+    max-height: 1000px;
+}
+
+#message {
+    opacity: 0;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+.color-changer {
+    background-color: aqua;
+}

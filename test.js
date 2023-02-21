@@ -378,3 +378,65 @@ var child = parent.getElementsByTagName("li")[0];
 console.log(child);
 var removed = parent.removeChild(child);
 parent.appendChild(removed);
+
+//events
+
+myTitle.onclick = function () {
+  alert("you clicked me");
+};
+
+myTitle.onmouseover = function () {
+  alert("you hovered your mouse over me");
+};
+
+function setUpEvents() {
+  var text = document.getElementById("text-content");
+  var button = document.getElementById("show-more");
+
+  button.onclick = function () {
+    if (text.className === "open") {
+      //shrink the box
+      text.className = "";
+      button.innerHTML = "Show More";
+    } else {
+      //expand the box
+      text.className = "open";
+      button.innerHTML = "Show Less";
+    }
+  };
+}
+
+window.onload = function () { //window fully loaded first
+  setUpEvents();
+};
+
+var myMessage = document.getElementById("message");
+
+function showMessage() {
+  myMessage.className = "show";
+}
+
+// setTimeout(showMessage, 3000); //in miliseconds -calls the f once
+
+// var colorChanger = document.getElementsByClassName("color-changer")[0];
+// var colors = ["yellow","red", "blue", "green"];
+// var counter = 0;
+
+// function changeColour() {
+
+//   if (counter >= colors.length)
+//   {
+//     counter = 0;
+//   }
+
+//   colorChanger.style.backgroundColor = colors[counter];
+//     counter++;
+
+//   };
+
+//   var myTimer = setInterval(colorChanger, 3000); //every 3000 ms
+
+//   colorChanger.onclick = function() {
+//     clearInterval(myTimer);
+//     colorChanger.innerHTML = "Timer stopped";
+//   }
