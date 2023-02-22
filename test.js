@@ -404,9 +404,10 @@ function setUpEvents() {
       button.innerHTML = "Show Less";
     }
   };
-}
+};
 
-window.onload = function () { //window fully loaded first
+window.onload = function () {
+  //window fully loaded first
   setUpEvents();
 };
 
@@ -414,29 +415,26 @@ var myMessage = document.getElementById("message");
 
 function showMessage() {
   myMessage.className = "show";
-}
+};
 
-// setTimeout(showMessage, 3000); //in miliseconds -calls the f once
+setTimeout(showMessage, 3000); //in miliseconds -calls the f once
 
-// var colorChanger = document.getElementsByClassName("color-changer")[0];
-// var colors = ["yellow","red", "blue", "green"];
-// var counter = 0;
+var colorChanger = document.getElementsByClassName("color-changer")[0];
+var colors = ["red", "blue", "green", "pink"];
+var counter = 0;
 
-// function changeColour() {
+function changeColor() {
+  if (counter >= colors.length) {
+    counter = 0;
+  }
 
-//   if (counter >= colors.length)
-//   {
-//     counter = 0;
-//   }
+  colorChanger.style.background = colors[counter];
+  counter++;
+};
 
-//   colorChanger.style.backgroundColor = colors[counter];
-//     counter++;
+var myTimer = setInterval(changeColor, 3000); //calls the f every 3s
 
-//   };
-
-//   var myTimer = setInterval(colorChanger, 3000); //every 3000 ms
-
-//   colorChanger.onclick = function() {
-//     clearInterval(myTimer);
-//     colorChanger.innerHTML = "Timer stopped";
-//   }
+colorChanger.onclick = function () {
+  clearInterval(myTimer); //stop timer
+  colorChanger.innerHTML = "Timer stopped";
+};
