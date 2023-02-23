@@ -404,7 +404,7 @@ function setUpEvents() {
       button.innerHTML = "Show Less";
     }
   };
-};
+}
 
 window.onload = function () {
   //window fully loaded first
@@ -415,7 +415,7 @@ var myMessage = document.getElementById("message");
 
 function showMessage() {
   myMessage.className = "show";
-};
+}
 
 setTimeout(showMessage, 3000); //in miliseconds -calls the f once
 
@@ -430,11 +430,36 @@ function changeColor() {
 
   colorChanger.style.background = colors[counter];
   counter++;
-};
+}
 
 var myTimer = setInterval(changeColor, 3000); //calls the f every 3s
 
 colorChanger.onclick = function () {
   clearInterval(myTimer); //stop timer
   colorChanger.innerHTML = "Timer stopped";
+};
+
+//forms
+
+var myForm = document.forms.myForm; //name of form
+myForm.name.value; //returns the value of the input feild
+console.log(myForm.color.value);
+
+myForm.name.onfocus = function () {
+  myForm.name.style.border = "4px solid pink";
+};
+
+myForm.name.onblur = function () {
+  myForm.name.style.border = "none";
+};
+
+var formMessage = document.getElementById("form-message");
+myForm.onsubmit = function () {
+  if (myForm.name.value == "") {
+    formMessage.innerHTML = "please enter a name";
+    return false; //stops the form from being submitted
+  } else {
+    formMessage.innerHTML = "";
+    return true;
+  }
 };

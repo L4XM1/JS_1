@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(204, 203, 203, 0.801);
+}
+
 #text-content {
   max-height: 270px;
   overflow: hidden;
@@ -7,6 +11,13 @@
 
 .color-changer {
   background-color: aqua;
+}
+
+#show-more {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 #text-content.open {
