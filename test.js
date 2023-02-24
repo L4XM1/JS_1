@@ -463,3 +463,19 @@ myForm.onsubmit = function () {
     return true;
   }
 };
+
+//vanilla js
+var myPara = document
+  .getElementById("paragraph-wrapper")
+  .getElementsByTagName("p")[4];
+console.log(myPara);
+
+//jquery
+var myPara2 = $("#paragraph-wrapper p:last-child");
+myPara2.addClass("test");
+myPara2.fadeOut();
+myPara2.fadeIn();
+myPara2.css({ position: "relative", color: "red" });
+myPara2.animate({ left: "50px" });
+
+console.log(myPara2);
